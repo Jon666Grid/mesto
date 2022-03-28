@@ -19,3 +19,68 @@
    height: 33px;
    width: 142px;
 }
+
+.profile {
+   max-width: 880px;
+   height: 120px;
+   margin: 40px auto 0px;
+}
+
+.profile__flex {
+   display: flex;
+   border: 1px solid red;
+}
+
+.avatar {
+   width: 168px;
+   height: 124px;
+}
+
+.avatar__img {
+   border-radius: 50%;
+   height: 120px;
+   width: 120px;
+   display: block;
+   margin: 0 auto;
+}
+
+.profile__info {
+   max-width: 336px;
+   height: 73px;
+   margin: 22px 0px 0px;
+}
+
+.profile__info-name {
+   font-weight: 500;
+   font-size: 42px;
+   line-height: 1.1em;
+   color: #FFFFFF;
+   margin: 0;
+   padding: 0;
+}
+
+.profole__button {
+   width: 24px;
+   height: 24px;
+   background: no-repeat center/60% url("../images/slash.svg");
+   border: 1px solid #FFFFFF;
+   
+}
+
+.profile__info-profession {
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 1.2em;
+   margin-top: 16px;
+   margin-bottom: 0;
+   padding: 0;
+   color: #FFFFFF;
+}
+
+.add__button {
+   width: 150px;
+   height: 50px;
+   background: no-repeat center/15% url("../images/plus.svg");
+   border: 1px solid #FFFFFF;
+   margin: auto 0px auto auto;
+}
