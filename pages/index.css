@@ -22,26 +22,23 @@
 
 .profile {
    max-width: 880px;
-   height: 120px;
    margin: 40px auto 0px;
 }
 
 .profile__flex {
    display: flex;
-   border: 1px solid red;
 }
 
 .avatar {
    width: 168px;
    height: 124px;
+   border: 1px solid red;
 }
 
 .avatar__img {
    border-radius: 50%;
    height: 120px;
    width: 120px;
-   display: block;
-   margin: 0 auto;
 }
 
 .profile__info {
@@ -71,7 +68,7 @@
    font-weight: 400;
    font-size: 18px;
    line-height: 1.2em;
-   margin-top: 16px;
+   margin-top: 10px;
    margin-bottom: 0;
    padding: 0;
    color: #FFFFFF;
@@ -83,4 +80,135 @@
    background: no-repeat center/15% url("../images/plus.svg");
    border: 1px solid #FFFFFF;
    margin: auto 0px auto auto;
+}
+
+.elements {
+   max-width: 880px;
+   height: 744px;
+   margin: 47px auto 0px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit ,minmax(282px,1fr));
+   gap: 17px;
+}
+
+.element {
+   width: 282px;
+   height: 361px;
+   background: #FFFFFF;
+   border-radius: 10px;
+   overflow: hidden;
+}
+
+.element__flex {
+  width: 246px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.element__img {
+   width: 282px;
+   height: 282px;
+}
+
+.element__title {
+   font-weight: 900;
+   font-size: 24px;
+   line-height: 1.2em;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+.element__group {
+   background: no-repeat center url("../images/heart.svg");
+   min-width: 22px;
+   height: 19px;
+   border: none;
+}
+
+.footer {
+   max-width: 880px;
+}
+
+.footer__copyright {
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 1.2em;
+   color: #545454;
+}
+
+@media all and (min-width: 640px) and (max-width: 960px) {
+   .page {
+      max-width: 640px;
+   }
+
+   .header {
+      max-width: 600px;
+   }
+
+   .profile {
+      max-width: 600px;
+   }
+
+   .elements {
+      max-width: 600px;
+   }
+}
+
+@media all and (min-width: 240px) and (max-width: 639px) {
+   .page {
+      max-width: 320px;
+   }
+
+   .logo__image {
+      padding-left: 27px;
+   }
+
+   .header {
+      max-width: 320px;
+   }
+
+   .logo__image {
+      width: 103px;
+      height: 24px;
+   }
+
+   .profile__flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .avatar__img {
+      margin-left: 20px;
+      border: 1px solid green;
+   }
+
+   .profile {
+     max-width: 282px;
+   }
+
+   
+   .profile__info-name {
+      font-size: 27px;
+      line-height: 1.2em;
+      text-align: center;
+   }
+
+   .profile__info-profession {
+      font-size: 14px;
+      line-height: 1.2em;
+      text-align: center;
+   }
+   
+
+   .add__button {
+      width: 282px;
+   }
+  
+   .elements {
+      
+   }
 }
