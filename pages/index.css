@@ -30,9 +30,8 @@
 }
 
 .avatar {
-   width: 168px;
+   width: 148px;
    height: 124px;
-   border: 1px solid red;
 }
 
 .avatar__img {
@@ -61,7 +60,11 @@
    height: 24px;
    background: no-repeat center/60% url("../images/slash.svg");
    border: 1px solid #FFFFFF;
-   
+}
+
+.profole__button:hover {
+   cursor: pointer;
+   opacity: 0.8;
 }
 
 .profile__info-profession {
@@ -82,13 +85,18 @@
    margin: auto 0px auto auto;
 }
 
+.add__button:hover {
+   cursor: pointer;
+   opacity: 0.8;
+}
+
 .elements {
    max-width: 880px;
    height: 744px;
    margin: 47px auto 0px;
    display: grid;
    grid-template-columns: repeat(auto-fit ,minmax(282px,1fr));
-   gap: 17px;
+   gap: 20px 17px;
 }
 
 .element {
@@ -137,6 +145,7 @@
    font-size: 18px;
    line-height: 1.2em;
    color: #545454;
+   margin-bottom: 0;
 }
 
 @media all and (min-width: 640px) and (max-width: 960px) {
@@ -168,6 +177,7 @@
 
    .header {
       max-width: 320px;
+      margin-top: 28px;
    }
 
    .logo__image {
@@ -182,12 +192,13 @@
    }
 
    .avatar__img {
-      margin-left: 20px;
-      border: 1px solid green;
+      display: block;
+      margin: 0 auto;
    }
 
    .profile {
      max-width: 282px;
+     margin-top: 20px;
    }
 
    
@@ -203,12 +214,113 @@
       text-align: center;
    }
    
+   .profole__button {
+      width: 18px;
+      height: 18px;
+   }
 
    .add__button {
       width: 282px;
+      background-size: 6%;
+      margin-top: 18px;
+   }
+
+   .elements {
+      margin-top: 40px; 
    }
   
-   .elements {
-      
+   .element {
+      justify-self: center;
    }
+
+   
+  .footer {
+   width: 282px;
+   margin: 0 auto;
+  }
+
+   .footer__copyright {
+      font-size: 14px;
+      line-height: 1.2em;
+   }
+
+}
+
+.popup__container {
+   width: 430px;
+   height: 330px;
+   position: relative;
+   background: rgba(0,0,0,.5);
+   padding: 36px;
+   margin: 0 auto;
+}
+
+.popup__close {
+   background: no-repeat center url("../images/Close\ Icon.svg");
+   width: 32px;
+   height: 32px;
+   border: none;
+   position: absolute;
+   right: 0;
+   top: 0;
+}
+
+.popup__close:hover {
+   cursor: pointer;
+   opacity: 0.8;
+}
+
+.form {
+   padding: 36px;
+   background: #FFFFFF;
+   border-radius: 10px;
+}
+
+.form__profile {
+   font-size: 24px;
+   line-height: 1.2em;
+   margin-top: 0;
+}
+
+.input__text {
+   width: 358px;
+   height: 27px;
+   border: none;
+   border-bottom: 1px solid rgba(84, 84, 84, 1);
+   margin-top: 30px;
+}
+
+.input__text_name {
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 1.2em;
+}
+
+.input__text_type_profession {
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 1.2em;
+}
+
+.form__submit-btn {
+   width: 358px;
+   height: 50px;
+   background: #000000;
+   border-radius: 2px;
+   border: none;
+   margin-top: 48px;
+}
+
+.form__submit-btn:hover {
+   cursor: pointer;
+   opacity: 0.8;
+}
+
+.form__submit-btn_text-save {
+   font-style: normal;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 1.2px;
+   text-align: center;
+   color: #FFFFFF;
 }
