@@ -1,5 +1,5 @@
 .page {
-    background: rgba(0, 0, 0, 1);
     box-sizing: border-box;
+    background: rgba(0, 0, 0, 1);
     font-family: 'Inter', 'Arial' , sans-serif;
 }
