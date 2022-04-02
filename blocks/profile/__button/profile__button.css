@@ -1,7 +1,7 @@
 .profile__button {
     width: 24px;
     height: 24px;
-    background: no-repeat center/60% url("../../../images/slash.svg");
+    background: no-repeat center/50% url("../../../images/slash.svg");
     border: 1px solid #FFFFFF;
     position: absolute;
     top: 36px;
