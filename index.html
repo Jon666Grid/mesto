@@ -9,10 +9,11 @@
       <title>Mesto</title>
    </head>
 <body class="page">
+   <div class="page__container">
 
    <header class="header">
-      <div class="header__logo">
-         <img class="logo__image" src="./images/Logo.svg" alt="надпись 'Mesto russia'">
+      <div class="logo">
+         <img class="logo__image" src="./images/Logo.svg" alt="надпись Mesto russia">
       </div>
    </header>
 
@@ -22,16 +23,15 @@
          <img class="avatar__img" src="./images/avatar-image.jpg" alt="Жак-Ив Кусто">
       </div>
          <section class="profile__info">
-            <h1 class="profile__info-name">Жак-Ив Кусто
-               <button class="profole__button" type="button"></button>
-            </h1>
-            <p class="profile__info-profession">Исследователь океана</p>   
+            <button class="profile__button" type="button"></button>
+            <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+            <p class="profile__info-profession">Исследователь океана</p>
          </section>
          <button class="add__button" type="button"></button>
       </div>
    </main>
 
-   <section class="elements">
+   <div class="elements">
       <article class="element">
         <img src="./images/карачаевск.jpg" alt="Карачаевск" class="element__img">
         <div class="element__flex">
@@ -40,7 +40,7 @@
       </div>
       </article>
       <article class="element">
-         <img src="./images/Гора Эльбрус.jpg" alt="Гора Эльбрус" class="element__img">
+         <img src="./images//ГораЭльбрус.jpg" alt="Гора Эльбрус" class="element__img">
          <div class="element__flex">
          <h2 class="element__title">Гора Эльбрус</h2>
          <button class="element__group"></button>
@@ -54,7 +54,7 @@
       </div>
        </article>
        <article class="element">
-         <img src="./images/Гора Эльбрус 2.jpg" alt="Гора Эльбрус" class="element__img">
+         <img src="./images/ГораЭльбрус2.jpg" alt="Гора Эльбрус" class="element__img">
          <div class="element__flex">
          <h2 class="element__title">Гора Эльбрус</h2>
          <button class="element__group"></button>
@@ -68,12 +68,14 @@
       </div>
        </article>
        <article class="element">
-         <img src="./images/карачаево-черкесская республика.jpg" alt="Карачаево-черкесская республика" class="element__img">
+         <img src="./images//Карачаево-ЧеркесскаяРеспублика.jpg" alt="Карачаево-черкесская республика" class="element__img">
          <div class="element__flex">
          <h2 class="element__title">Карачаево-черкесская республика</h2>
          <button class="element__group"></button>
       </div>
        </article>
+      </div>
+
        <footer class="footer">
            <p class="footer__copyright">&copy; 2022. Гридин Евгений</p>
        </footer>
@@ -81,8 +83,8 @@
          <div class="popup__container">
             <form class="form">
                <h3 class="form__profile">Редактировать профиль</h3>
-                  <input type="text" placeholder="Жак-Ив Кусто" class="input__text input__text_name">
-                  <input type="text" placeholder="Иследователь океана" class="input__text input__text_type_profession">
+                  <input type="text" name="UserName" value="Жак-Ив Кусто" class="form__text form__text_name">
+                  <input type="text" name="UserProfession" value="Исследователь океана" class="form__text form__text_profession">
                   <button type="submit" class="form__submit-btn form__submit-btn_text-save">
                     сохранить
                   </button>
@@ -91,5 +93,7 @@
          </div>
        </div>
        <script src="./scripts/index.js"></script>
+      </div>
+
 </body>
 </html>

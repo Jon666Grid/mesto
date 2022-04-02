@@ -1,0 +1,14 @@
+.element {
+    width: 282px;
+    height: 361px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+ }
+
+@media all and (min-width: 240px) and (max-width: 639px) {
+  
+    .element {
+       justify-self: center;
+    }
+}

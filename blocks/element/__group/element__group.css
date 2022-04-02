@@ -1,0 +1,16 @@
+.element__group {
+    background: no-repeat center url("../../../images/heart.svg");
+    min-width: 22px;
+    height: 19px;
+    border: none;
+    cursor: pointer;
+ }
+ 
+ .element__group:hover {
+   opacity: 0.5;
+}
+ .element__group:active {
+   background: url("../../../images/heart\ black.svg");
+   opacity: 1;
+   
+}

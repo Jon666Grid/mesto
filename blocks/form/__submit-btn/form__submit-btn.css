@@ -1,0 +1,22 @@
+.form__submit-btn {
+    width: 100%;
+    max-width: 358px;
+    height: 48px;
+    background: #000000;
+    border-radius: 2px;
+    border: none;
+    margin-top: 48px;
+ }
+ 
+ .form__submit-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+ }
+
+ @media all and (min-width: 240px) and (max-width: 639px) {
+  
+   .form__submit-btn {
+      max-width: 238px;
+      max-height: 46px;
+   }
+ }

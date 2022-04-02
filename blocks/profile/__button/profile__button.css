@@ -1,0 +1,35 @@
+.profile__button {
+    width: 24px;
+    height: 24px;
+    background: no-repeat center/60% url("../../../images/slash.svg");
+    border: 1px solid #FFFFFF;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    
+}
+
+ .profile__button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+ }
+
+ @media all and (min-width: 640px) and (max-width: 960px) {
+
+   .profile__button {
+      width: 22px;
+      height: 22px;
+      top: 32px;
+      right: 10px;
+   }
+}
+
+@media all and (min-width: 240px) and (max-width: 639px) {
+  
+   .profile__button {
+      width: 18px;
+      height: 18px;
+      top: 34px;
+      right: 20px;
+   }
+}
