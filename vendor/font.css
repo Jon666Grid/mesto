@@ -6,13 +6,12 @@
         src: url("../../vendor/fonts/Inter/IntelMedium/Inter-Medium.woff2") format("woff2"),
              url("../../vendor/fonts/Inter/IntelMedium/Inter-Medium.woff") format("woff");
      }
-
-@font-face {
+     
+     @font-face {
         font-family: 'Inter';
         font-style:  normal;
         font-weight: 900;
         font-display: swap;
-        src: url("../../vendor/fonts/Inter/IntelRegular/Inter-Regular.woff2") format("woff2"),
+        src: url("../../../") format("woff2"),
              url("../../vendor/fonts/Inter/IntelRegular/Inter-Regular.woff") format("woff");
      }
-     
