@@ -8,6 +8,9 @@
    font-size: 18px;
    line-height: 1.2px;
    text-align: center;
+   border: none;
+   border-radius: 2px;
+   background: #000000;
    color: #FFFFFF;
 }
 

@@ -19,8 +19,8 @@ function onOverClick(event) {
 modalWindow.addEventListener('click', onOverClick);
 
 const formElement = document.querySelector('.form');
-const nameInput = formElement.querySelector('.form__text_name_user');
-const jobInput = formElement.querySelector('.form__text_profession_user');
+const nameInput = formElement.querySelector('.form__text_user_name');
+const jobInput = formElement.querySelector('.form__text_user_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoProfession = document.querySelector('.profile__info-profession');
 

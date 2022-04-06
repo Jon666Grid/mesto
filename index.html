@@ -18,16 +18,14 @@
 
       <main class="content">
 
-         <section class="profile">
-            <div class="profile__attribute">
-               <img class="avatar" src="./images/avatar-image.jpg" alt="жак-ив кусто">
-               <div class="profile__info">
-                  <button class="profile__button" type="button"></button>
-                  <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-                  <p class="profile__info-profession">Исследователь океана</p>
-               </div>
-               <button class="profile__add-button" type="button"></button>
+         <section class="profile profile__attribute">
+            <img class="profile__avatar" src="./images/avatar-image.jpg" alt="жак-ив кусто">
+            <div class="profile__info">
+               <button class="profile__button" type="button"></button>
+               <h1 class="profile__info-name">Жак-Ив Кусто</h1>
+               <p class="profile__info-profession">Исследователь океана</p>
             </div>
+            <button class="profile__add-button" type="button"></button>
          </section>
 
          <section class="elements">
@@ -71,7 +69,7 @@
                   class="element__img">
                <div class="element__flex">
                   <h2 class="element__title">Карачаево-черкесская республика</h2>
-                  <button class="element__like-button"></button>
+                  <button class="element__like-button" type="button"></button>
                </div>
             </article>
          </section>
@@ -86,10 +84,10 @@
          <div class="popup__container">
             <form class="form" name="myForm">
                <h3 class="form__profile">Редактировать профиль</h3>
-               <input type="text" name="UserName" placeholder="Жак-Ив Кусто" class="form__text form__text_name_user">
+               <input type="text" name="UserName" placeholder="Жак-Ив Кусто" class="form__text form__text_user_name">
                <input type="text" name="UserProfession" placeholder="Исследователь океана"
-                  class="form__text form__text_profession_user">
-               <button type="submit" class="form__submit-btn form__submit-btn_text-save">
+                  class="form__text form__text_user_profession">
+               <button type="submit" class="form__submit-btn">
                   Сохранить
                </button>
             </form>

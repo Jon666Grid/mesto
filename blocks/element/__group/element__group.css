@@ -4,15 +4,15 @@
    height: 19px;
    border: none;
    transition: .5s;
-   }
- 
+}
+
 .element__group:hover {
    cursor: pointer;
    transform: scale(1.2);
    opacity: 0.5;
-   }
+}
 
 .element__group:active {
    background: url("../../../images/heartblack.svg");
    opacity: 1;
-   }
+}

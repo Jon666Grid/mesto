@@ -9,6 +9,7 @@
    white-space: nowrap;
    overflow: hidden;
    margin-top: 28px;
+   opacity: 0.8;
 }
 
 @media all and (min-width: 240px) and (max-width: 639px) {
