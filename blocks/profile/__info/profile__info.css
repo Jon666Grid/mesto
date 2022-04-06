@@ -16,6 +16,6 @@
 @media all and (min-width: 240px) and (max-width: 639px) {
 
     .profile__info {
-        padding-left: 5px;
+        padding-left: 0;
     }
 }
