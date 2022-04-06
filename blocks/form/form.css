@@ -1,8 +1,17 @@
 .form {
+    text-align: center;
+    padding-top: 36px;
+    padding-bottom: 38px;
     background: #FFFFFF;
     border-radius: 10px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     margin: 0;
-    text-align: center;
-    padding-top: 34px;
-    padding-bottom: 37px;
- }
+}
+
+@media all and (min-width: 240px) and (max-width: 639px) {
+
+    .form {
+        padding-top: 28px;
+        padding-bottom: 24px;
+    }
+}

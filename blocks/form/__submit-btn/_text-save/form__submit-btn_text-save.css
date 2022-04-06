@@ -1,16 +1,5 @@
 .form__submit-btn_text-save {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.2px;
-    text-align: center;
-    color: #FFFFFF;
- }
-
- @media all and (min-width: 240px) and (max-width: 639px) {
- 
-    .form__submit-btn_text-save {
-       font-size: 14px;
-    }
- 
- }
+   border-radius: 2px;
+   border: none;
+   background: #000000;
+}

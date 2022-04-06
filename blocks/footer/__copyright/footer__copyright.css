@@ -1,14 +1,13 @@
 .footer__copyright {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.2em;
-    color: #545454;
- }
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 1.2em;
+   color: #545454;
+}
 
 @media all and (min-width: 240px) and (max-width: 639px) {
 
-    .footer__copyright {
-       font-size: 14px;
-       line-height: 1.2em;
-    }
- }
+   .footer__copyright {
+      font-size: 14px;
+   }
+}

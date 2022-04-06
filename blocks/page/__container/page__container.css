@@ -10,7 +10,7 @@
 }
 
 @media all and (min-width: 240px) and (max-width: 639px) {
-  .page__container {
-     max-width: 320px;
-  }
+   .page__container {
+      max-width: 320px;
+   }
 }

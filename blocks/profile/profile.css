@@ -1,19 +1,18 @@
 .profile {
-    max-width: 880px;
-    margin: 40px auto 0px;
- }
+   max-width: 880px;
+   margin: 40px auto 0px;
+}
 
 @media all and (min-width: 640px) and (max-width: 960px) {
-   
-    .profile {
-       max-width: 600px;
-    }
+
+   .profile {
+      max-width: 600px;
+   }
 }
 
 @media all and (min-width: 240px) and (max-width: 639px) {
-  
+
    .profile {
-     max-width: 282px;
-     margin-top: 20px;
+      max-width: 282px;
    }
 }

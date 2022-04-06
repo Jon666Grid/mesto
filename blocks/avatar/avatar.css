@@ -1,4 +1,13 @@
 .avatar {
-    width: 148px;
-    height: 124px;
- }
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+
+@media all and (min-width: 240px) and (max-width: 639px) {
+
+    .avatar {
+        display: block;
+        margin: 0 auto;
+    }
+}
