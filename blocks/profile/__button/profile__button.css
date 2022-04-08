@@ -4,6 +4,7 @@
    background: no-repeat center/50% url("../../../images/slash.svg");
    border: 1px solid #FFFFFF;
    position: absolute;
+   box-sizing: border-box;
    top: 36px;
    right: 0;
    transition: 0.3s;

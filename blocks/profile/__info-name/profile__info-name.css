@@ -24,6 +24,7 @@
   .profile__info-name {
     width: 192px;
     font-size: 27px;
+    text-align: center;
     margin: 26px auto 0px;
   }
 }
