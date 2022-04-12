@@ -80,13 +80,13 @@
          <p class="footer__copyright">&copy; 2022. Гридин Евгений</p>
       </footer>
 
-      <div class="popup">
+      <div class="popup popup_type_edit">
          <div class="popup__container">
             <form class="form" name="myForm">
                <h3 class="form__profile">Редактировать профиль</h3>
                <input type="text" name="UserName" maxlength="40" placeholder="Имя"
                   class="form__text form__text_type_name">
-               <input type="text" name="UserProfession" maxlength="40" placeholder="Профессия"
+               <input type="text" name="UserProfession" maxlength="60" placeholder="Профессия"
                   class="form__text form__text_type_profession">
                <button type="submit" class="form__submit-btn">
                   Сохранить
@@ -95,6 +95,30 @@
             <button class="popup__close" type="button"></button>
          </div>
       </div>
+
+
+      <div class="popup popup_type_new-card">
+         <div class="popup__container">
+            <form class="form" name="myForm">
+               <h3 class="form__profile">Новое место</h3>
+               <input type="text" maxlength="40" placeholder="Название" class="form__text form__text_type_mesto">
+               <input type="url" placeholder="Ссылка на картинку" class="form__text form__text_type_img">
+               <button type="submit" class="form__submit-btn">
+                  Создать
+               </button>
+            </form>
+            <button class="popup__close" type="button"></button>
+         </div>
+      </div>
+
+      <div class="popup popup_type_image">
+         <div class="popup__content">
+            <img src="./images/ГораЭльбрус2.jpg" alt="" class="popup__img">
+            <h3 class="popup__title">Карачаево-Черкессия</h3>
+            <button class="popup__close popup__close_img_content" type="button"></button>
+         </div>
+      </div>
+
    </div>
    <script src="./scripts/index.js"></script>
 

@@ -1,5 +1,5 @@
 .popup__close {
-   background: no-repeat center/98% url("../../../images/CloseIcon.svg");
+   background: center center / cover no-repeat url("../../../images/CloseIcon.svg");
    width: 32px;
    height: 32px;
    border: none;

@@ -1,5 +1,5 @@
 const profoleButtonActive = document.querySelector('.profile__button');
-const modalWindow = document.querySelector('.popup');
+const modalWindow = document.querySelector('.popup_type_edit');
 const modalCloseBtn = modalWindow.querySelector('.popup__close');
 const formSubmitBtn = modalWindow.querySelector('.form__submit-btn');
 
