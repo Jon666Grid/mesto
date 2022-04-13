@@ -25,55 +25,57 @@ const initialCards = [
     }
 ];
 
-
-const profoleButtonAdd = document.querySelector('.profile__add-button');
-
-
-
-
-const modalWindowCard = document.querySelector('.popup_type_new-card');
-const modalCloseBtnCard = modalWindowCard.querySelector('.popup__close');
-const formSubmitBtnCard = modalWindowCard.querySelector('.form__submit-btn');
+const popup = document.querySelector('.popup');
 
 const profoleButtonActive = document.querySelector('.profile__button');
+const modalWindow = document.querySelector('.popup_type_edit');
+const modalCloseBtn = modalWindow.querySelector('.popup__close');
+const formSubmitBtn = modalWindow.querySelector('.form__submit-btn');
 
-function popup(e) {
-    const modalEdit = document.querySelector('.popup_type_edit');
-    const modalCloseBtn = modalEdit.querySelector('.popup__close');
-    const formSubmitBtn = modalEdit.querySelector('.form__submit-btn');
-    modalEdit.classList.add ('popup_is_opened');
+const cardButtonActive = document.querySelector('.profile__add-button');
+const modalWindowTwo = document.querySelector('.popup_type_new-card');
+const modalTwoCloseBtn = modalWindowTwo.querySelector('.popup__close');
+const formTwoSubmitBtn = modalWindowTwo.querySelector('.form__submit-btn');
+
+profoleButtonActive.addEventListener('click', ()=>togglePopup(0));
+// modalCloseBtn.addEventListener('click', ()=>togglePopup(modalWindow));
+
+cardButtonActive.addEventListener('click', ()=>togglePopup(1));
+
+
+
+function togglePopup () {
+    popup[0].classList.toggle('popup_is_opened')
 }
 
-// function openModal() {
-//     modalWindow.classList.toggle('popup_is_opened');
-//     modalWindowCard.classList.toggle('popup_is_opened');
+// function closePopup () {
+//     popup.classList.remove('popup_is_opened')
 // }
 
-// profoleButtonActive.addEventListener('click', openModal);
-// modalCloseBtn.addEventListener('click', openModal);
 
-// profoleButtonAdd.addEventListener('click', openModal);
+
+
 
 // function onOverClick(event) {
 //     if (event.target === event.currentTarget) {
-//         openModal();
+//         popup.classList.remove('popup_is_opened');
 //     }
 // }
 
-// modalWindow.addEventListener('click', onOverClick);
+// popup.addEventListener('click', onOverClick);
 
-const formElement = document.querySelector('.form');
-const nameInput = formElement.querySelector('.form__text_type_name');
-const jobInput = formElement.querySelector('.form__text_type_profession');
-const profileInfoName = document.querySelector('.profile__info-name');
-const profileInfoProfession = document.querySelector('.profile__info-profession');
+// const formElement = document.querySelector('.form');
+// const nameInput = formElement.querySelector('.form__text_type_name');
+// const jobInput = formElement.querySelector('.form__text_type_profession');
+// const profileInfoName = document.querySelector('.profile__info-name');
+// const profileInfoProfession = document.querySelector('.profile__info-profession');
 
-function formSubmitHandler(event) {
-    event.preventDefault();
+// function formSubmitHandler(event) {
+//     event.preventDefault();
 
-    profileInfoName.textContent = nameInput.value;
-    profileInfoProfession.textContent = jobInput.value;
-    toggleModalWindow();
-}
+//     profileInfoName.textContent = nameInput.value;
+//     profileInfoProfession.textContent = jobInput.value;
+//     toggleModalWindow();
+// }
 
-formElement.addEventListener('submit', formSubmitHandler);
+// formElement.addEventListener('submit', formSubmitHandler);
