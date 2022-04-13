@@ -29,50 +29,8 @@
          </section>
 
          <section class="elements">
-            <article class="element">
-               <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__img">
-               <div class="element__flex">
-                  <h2 class="element__title">Карачаевск</h2>
-                  <button class="element__like-button" type="button"></button>
-               </div>
-            </article>
-            <article class="element">
-               <img src="./images//ГораЭльбрус.jpg" alt="гора эльбрус" class="element__img">
-               <div class="element__flex">
-                  <h2 class="element__title">Гора Эльбрус</h2>
-                  <button class="element__like-button" type="button"></button>
-               </div>
-            </article>
-            <article class="element">
-               <img src="./images/домбай2.jpg" alt="домбай" class="element__img">
-               <div class="element__flex">
-                  <h2 class="element__title">Домбай</h2>
-                  <button class="element__like-button" type="button"></button>
-               </div>
-            </article>
-            <article class="element">
-               <img src="./images/ГораЭльбрус2.jpg" alt="гора эльбрус" class="element__img">
-               <div class="element__flex">
-                  <h2 class="element__title">Гора Эльбрус</h2>
-                  <button class="element__like-button" type="button"></button>
-               </div>
-            </article>
-            <article class="element">
-               <img src="./images/Домбай.jpg" alt="домбай" class="element__img">
-               <div class="element__flex">
-                  <h2 class="element__title">Домбай</h2>
-                  <button class="element__like-button" type="button"></button>
-               </div>
-            </article>
-            <article class="element">
-               <img src="./images//Карачаево-ЧеркесскаяРеспублика.jpg" alt="карачаево-черкесская республика"
-                  class="element__img">
-               <div class="element__flex">
-                  <h2 class="element__title">Карачаево-черкесская республика</h2>
-                  <button class="element__like-button" type="button"></button>
-               </div>
-            </article>
-         </section>
+            <ul class="elements__list"></ul>
+           </section>
 
       </main>
 
@@ -101,7 +59,7 @@
          <div class="popup__container">
             <form class="form" name="myForm">
                <h3 class="form__profile">Новое место</h3>
-               <input type="text" maxlength="40" placeholder="Название" class="form__text form__text_type_mesto">
+               <input type="text" maxlength="40" placeholder="Название" class="form__text form__text_type_area">
                <input type="url" placeholder="Ссылка на картинку" class="form__text form__text_type_img">
                <button type="submit" class="form__submit-btn">
                   Создать
@@ -118,6 +76,17 @@
             <button class="popup__close popup__close_img_content" type="button"></button>
          </div>
       </div>
+
+      <template class="card-template">
+         <li class="card">
+            <img src="." alt="" class="card__img">
+            <div class="card__flex">
+               <h2 class="card__title"></h2>
+               <button class="card__like-button" type="button"></button>
+               <button class="card__del-button" type="button"></button>
+            </div>
+         </li>
+      </template>
 
    </div>
    <script src="./scripts/index.js"></script>
