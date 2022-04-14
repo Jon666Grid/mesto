@@ -12,6 +12,7 @@
 @import url(../blocks/profile/__info-profession/profile__info-profession.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__list/elements__list.css);
 @import url(../blocks/card/card.css);
 @import url(../blocks/card/__flex/card__flex.css);
 @import url(../blocks/card/__img/card__img.css);
@@ -33,15 +34,6 @@
 
 
 
-/* .popup_type_new-card {
-   visibility: visible;
-   opacity: 1;
-} */
-
-/* .popup_type_image {
-   visibility: visible;
-   opacity: 1;
-}
 
 .popup__content {
    margin: 0;
@@ -60,4 +52,4 @@
    color: #FFFFFF;
    margin: 0;
    padding: 0;
-} */
+}
