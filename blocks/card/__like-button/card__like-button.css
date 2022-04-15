@@ -11,8 +11,3 @@
    transform: scale(1.2);
    opacity: 0.5;
 }
-
-.card__like-button:active {
-   background: url("../../../images/heartblack.svg");
-   opacity: 1;
-}

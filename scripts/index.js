@@ -29,12 +29,12 @@ const initialCards = [
 const profoleButtonActive = document.querySelector('.profile__button');
 const modalWindow = document.querySelector('.popup_type_edit');
 const modalCloseBtn = modalWindow.querySelector('.popup__close');
-const formSubmitBtn = modalWindow.querySelector('.form__submit-btn');
+// const formSubmitBtn = modalWindow.querySelector('.form__submit-btn');
 
 const cardButtonActive = document.querySelector('.profile__add-button');
 const modalWindowTwo = document.querySelector('.popup_type_new-card');
 const modalTwoCloseBtn = modalWindowTwo.querySelector('.popup__close');
-const formTwoSubmitBtn = modalWindowTwo.querySelector('.form__submit-btn');
+// const formTwoSubmitBtn = modalWindowTwo.querySelector('.form__submit-btn');
 
 profoleButtonActive.addEventListener('click', () => togglePopup(modalWindow));
 modalCloseBtn.addEventListener('click', () => togglePopup(modalWindow));
@@ -76,7 +76,9 @@ formTypeEdit.addEventListener('submit', formSubmitHandler);
 
 const listElements = document.querySelector('.elements__list');
 const cardTemplateAdd = document.querySelector('.card-template');
-const CardDelButton = document.querySelector ('.card__del-button')
+
+const formTypeCard = document.querySelector('.forum_type_card');
+const ImputImgAdd = formTypeCard.querySelector ('.form__text_type_img');
 
 
 function render() {
@@ -86,19 +88,31 @@ function render() {
 
 function getCard(item) {
     const getTemplateList = cardTemplateAdd.content.cloneNode(true);
-
     const titleCard = getTemplateList.querySelector('.card__title');
+    const imageCard = getTemplateList.querySelector('.card__img');
+    const cardDelButton = getTemplateList.querySelector ('.card__del-button')
+    const cardLikeButton = getTemplateList.querySelector ('.card__like-button')
+    cardDelButton.addEventListener('click', handleRemoveElement);
+    cardLikeButton.addEventListener('click', () => cardLikeButton.classList.toggle('card__like-active'));
     titleCard.textContent = item.name;
-
-    const ImageCard = getTemplateList.querySelector('.card__img');
-    ImageCard.src = item.link;
-
+    imageCard.src = item.link;
     return getTemplateList;
 }
 
+function handleAddCard(event) {
+    event.preventDefault();
+    const inputValueArea = document.querySelector('.form__text_type_area').value;
+    const inputValueUrl = document.querySelector('.form__text_type_img').value;
+    const elemenCard = getCard({ name: inputValueArea, link: inputValueUrl });
+    listElements.prepend(elemenCard); 
+    togglePopup(modalWindowTwo);
+}
+
+formTypeCard.addEventListener('submit', handleAddCard);
+
 render();
 
-// function deliteCard (event) {
-//     const DelButton = event.target.listElements;
-//     DelButton.remove();
-// }
+function handleRemoveElement (event) {
+    const button = event.target.closest('.card');
+    button.remove();
+}

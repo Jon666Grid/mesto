@@ -53,3 +53,8 @@
    margin: 0;
    padding: 0;
 }
+
+.card__like-active {
+   background: url("../../../images/heartblack.svg");
+   /* opacity: 1; */
+}
