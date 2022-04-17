@@ -29,18 +29,24 @@ const initialCards = [
 const profoleButtonActive = document.querySelector('.profile__button');
 const modalWindow = document.querySelector('.popup_type_edit');
 const modalCloseBtn = modalWindow.querySelector('.popup__close');
-// const formSubmitBtn = modalWindow.querySelector('.form__submit-btn');
 
 const cardButtonActive = document.querySelector('.profile__add-button');
 const modalWindowTwo = document.querySelector('.popup_type_new-card');
 const modalTwoCloseBtn = modalWindowTwo.querySelector('.popup__close');
-// const formTwoSubmitBtn = modalWindowTwo.querySelector('.form__submit-btn');
+
+const modalWindowThree = document.querySelector('.popup_type_image');
+const modalThreeCloseBtn = modalWindowThree.querySelector('.popup__close_img_content');
+const titlePopup = modalWindowThree.querySelector('.popup__title');
+const imagePopup = modalWindowThree.querySelector('.popup__img');
+
 
 profoleButtonActive.addEventListener('click', () => togglePopup(modalWindow));
 modalCloseBtn.addEventListener('click', () => togglePopup(modalWindow));
 
 cardButtonActive.addEventListener('click', () => togglePopup(modalWindowTwo));
 modalTwoCloseBtn.addEventListener('click', () => togglePopup(modalWindowTwo));
+
+modalThreeCloseBtn.addEventListener('click', () => togglePopup(modalWindowThree));
 
 function togglePopup(popup) {
     popup.classList.toggle('popup_is_opened');
@@ -63,6 +69,8 @@ const nameInput = formTypeEdit.querySelector('.form__text_type_name');
 const jobInput = formTypeEdit.querySelector('.form__text_type_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoProfession = document.querySelector('.profile__info-profession');
+
+
 
 function formSubmitHandler(event) {
     event.preventDefault();
@@ -90,12 +98,23 @@ function getCard(item) {
     const getTemplateList = cardTemplateAdd.content.cloneNode(true);
     const titleCard = getTemplateList.querySelector('.card__title');
     const imageCard = getTemplateList.querySelector('.card__img');
-    const cardDelButton = getTemplateList.querySelector ('.card__del-button')
-    const cardLikeButton = getTemplateList.querySelector ('.card__like-button')
-    cardDelButton.addEventListener('click', handleRemoveElement);
+    const cardDelButton = getTemplateList.querySelector('.card__del-button');
+    const cardLikeButton = getTemplateList.querySelector('.card__like-button');
+    
+
     cardLikeButton.addEventListener('click', () => cardLikeButton.classList.toggle('card__like-active'));
+    cardDelButton.addEventListener('click', (event) => event.target.closest('.card').remove());
+    // imageCard.addEventListener('click', () => togglePopup(modalWindowThree));
+
     titleCard.textContent = item.name;
     imageCard.src = item.link;
+
+    imageCard.addEventListener('click', openAddMaskGroup);
+    function openAddMaskGroup() {
+        modalWindowThree.classList.toggle('popup_is_opened');
+        titlePopup.textContent = titleCard.textContent;
+        imagePopup.src = imageCard.src;
+    }
     return getTemplateList;
 }
 
@@ -111,8 +130,3 @@ function handleAddCard(event) {
 formTypeCard.addEventListener('submit', handleAddCard);
 
 render();
-
-function handleRemoveElement (event) {
-    const button = event.target.closest('.card');
-    button.remove();
-}
