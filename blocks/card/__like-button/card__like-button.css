@@ -14,5 +14,4 @@
 
 .card__like-active {
    background: url("../../../images/heartblack.svg");
-   z-index: 1;
 }
