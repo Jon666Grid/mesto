@@ -53,36 +53,43 @@ const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoProfession = document.querySelector('.profile__info-profession');
 
 
-profoleButtonActive.addEventListener('click', () => togglePopup(modalWindow));
-modalCloseBtn.addEventListener('click', () => togglePopup(modalWindow));
+profoleButtonActive.addEventListener('click',  () => openPopup(modalWindow));
+modalCloseBtn.addEventListener('click', () => closePopup(modalWindow));
 
-cardButtonActive.addEventListener('click', () => togglePopup(modalWindowTwo));
-modalTwoCloseBtn.addEventListener('click', () => togglePopup(modalWindowTwo));
+cardButtonActive.addEventListener('click', () => openPopup(modalWindowTwo));
+modalTwoCloseBtn.addEventListener('click', () => closePopup(modalWindowTwo));
 
-modalThreeCloseBtn.addEventListener('click', () => togglePopup(modalWindowThree));
+modalThreeCloseBtn.addEventListener('click', () => closePopup(modalWindowThree));
 
-function togglePopup(popup) {
-    popup.classList.toggle('popup_is_opened');
+function openPopup(popup) {
+    popup.classList.add('popup_is_opened');
+}
+
+function closePopup(popup) {
+    popup.classList.remove('popup_is_opened');
 }
 
 function onOverlayClick(event) {
     if (event.target === event.currentTarget) {
-        modalWindow.classList.remove('popup_is_opened');
-        modalWindowTwo.classList.remove('popup_is_opened');
+        modalWindow.classList.closePopup('popup_is_opened');
+        modalWindowTwo.classList.closePopup('popup_is_opened');
     }
 }
 
 modalWindow.addEventListener('click', onOverlayClick);
 modalWindowTwo.addEventListener('click', onOverlayClick);
 
+
 function formSubmitHandler(event) {
     event.preventDefault();
-    profileInfoName.textContent = nameInput.value;
-    profileInfoProfession.textContent = jobInput.value;
-    togglePopup(modalWindow);
+    profileInfoName.textContent = nameInput.value || profileInfoName.textContent;
+    profileInfoProfession.textContent = jobInput.value || profileInfoProfession.textContent;
+    closePopup(modalWindow);
 }
 
 formTypeEdit.addEventListener('submit', formSubmitHandler);
+
+
 
 function render() {
     const html = initialCards.map(getCard);
@@ -119,7 +126,8 @@ function handleAddCard(event) {
     const inputValueUrl = document.querySelector('.form__text_type_img').value;
     const elemenCard = getCard({ name: inputValueArea, link: inputValueUrl });
     listElements.prepend(elemenCard);
-    togglePopup(modalWindowTwo);
+    closePopup(modalWindowTwo);
+    formTypeCard.reset()
 }
 
 formTypeCard.addEventListener('submit', handleAddCard);

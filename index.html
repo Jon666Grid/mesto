@@ -42,9 +42,17 @@
          <div class="popup__container">
             <form class="form form_edit" name="myForm">
                <h3 class="form__profile">Редактировать профиль</h3>
-               <input type="text" name="UserName" maxlength="40" placeholder="Имя" class="form__text form__text_type_name">
-               <input type="text" name="UserProfession" maxlength="60" placeholder="Профессия"
-                  class="form__text form__text_type_profession">
+               <input type="text" 
+               name="UserName"
+               minlength="2"
+               maxlength="40"
+               placeholder="Имя" 
+               class="form__text form__text_type_name">
+               <input type="text" 
+               name="UserProfession" 
+               maxlength="60" 
+               placeholder="Профессия"
+               class="form__text form__text_type_profession">
                <button type="submit" class="form__submit-btn">
                   Сохранить
                </button>
