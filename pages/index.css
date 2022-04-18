@@ -25,39 +25,10 @@
 @import url(../blocks/popup/_is_opened/popup_is_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/__container-img/popup__container-img.css);
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__profile/form__profile.css);
 @import url(../blocks/form/__text/form__text.css);
 @import url(../blocks/form/__submit-btn/form__submit-btn.css);
-
-
-
-
-/* .popup_type_image {
-   visibility: visible;
-   opacity: 1;
-} */
-
-.popup__content {
-   margin: 0;
-   position: relative;
-}
-
-.popup__img {
-   max-width: 75vw;
-   max-height: 75vh;
-}
-
-.popup__title {
-   font-weight: 400;
-   font-size: 12px;
-   line-height: 1.25em;
-   color: #FFFFFF;
-   margin: 0;
-   padding: 0;
-}
-
-.card__like-active {
-   background: url("../images/heartblack.svg");
-   z-index: 1;
-}

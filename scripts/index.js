@@ -28,16 +28,29 @@ const initialCards = [
 
 const profoleButtonActive = document.querySelector('.profile__button');
 const modalWindow = document.querySelector('.popup_type_edit');
-const modalCloseBtn = modalWindow.querySelector('.popup__close');
+const modalCloseBtn = modalWindow.querySelector('.popup__close_edit');
 
 const cardButtonActive = document.querySelector('.profile__add-button');
 const modalWindowTwo = document.querySelector('.popup_type_new-card');
-const modalTwoCloseBtn = modalWindowTwo.querySelector('.popup__close');
+const modalTwoCloseBtn = modalWindowTwo.querySelector('.popup__close_card');
 
 const modalWindowThree = document.querySelector('.popup_type_image');
-const modalThreeCloseBtn = modalWindowThree.querySelector('.popup__close_img_content');
+const modalThreeCloseBtn = modalWindowThree.querySelector('.popup__close_img');
 const titlePopup = modalWindowThree.querySelector('.popup__title');
 const imagePopup = modalWindowThree.querySelector('.popup__img');
+
+
+const listElements = document.querySelector('.elements__list');
+const cardTemplateAdd = document.querySelector('.card-template');
+
+const formTypeCard = document.querySelector('.forum_type_card');
+const ImputImgAdd = formTypeCard.querySelector('.form__text_type_img');
+
+const formTypeEdit = document.querySelector('.forum_type_edit');
+const nameInput = formTypeEdit.querySelector('.form__text_type_name');
+const jobInput = formTypeEdit.querySelector('.form__text_type_profession');
+const profileInfoName = document.querySelector('.profile__info-name');
+const profileInfoProfession = document.querySelector('.profile__info-profession');
 
 
 profoleButtonActive.addEventListener('click', () => togglePopup(modalWindow));
@@ -52,7 +65,6 @@ function togglePopup(popup) {
     popup.classList.toggle('popup_is_opened');
 }
 
-
 function onOverlayClick(event) {
     if (event.target === event.currentTarget) {
         modalWindow.classList.remove('popup_is_opened');
@@ -63,31 +75,14 @@ function onOverlayClick(event) {
 modalWindow.addEventListener('click', onOverlayClick);
 modalWindowTwo.addEventListener('click', onOverlayClick);
 
-
-const formTypeEdit = document.querySelector('.forum_type_edit');
-const nameInput = formTypeEdit.querySelector('.form__text_type_name');
-const jobInput = formTypeEdit.querySelector('.form__text_type_profession');
-const profileInfoName = document.querySelector('.profile__info-name');
-const profileInfoProfession = document.querySelector('.profile__info-profession');
-
-
-
 function formSubmitHandler(event) {
     event.preventDefault();
     profileInfoName.textContent = nameInput.value;
     profileInfoProfession.textContent = jobInput.value;
-    togglePopup(modalWindow); 
+    togglePopup(modalWindow);
 }
 
 formTypeEdit.addEventListener('submit', formSubmitHandler);
-
-
-const listElements = document.querySelector('.elements__list');
-const cardTemplateAdd = document.querySelector('.card-template');
-
-const formTypeCard = document.querySelector('.forum_type_card');
-const ImputImgAdd = formTypeCard.querySelector ('.form__text_type_img');
-
 
 function render() {
     const html = initialCards.map(getCard);
@@ -100,18 +95,18 @@ function getCard(item) {
     const imageCard = getTemplateList.querySelector('.card__img');
     const cardDelButton = getTemplateList.querySelector('.card__del-button');
     const cardLikeButton = getTemplateList.querySelector('.card__like-button');
-    
+
 
     cardLikeButton.addEventListener('click', () => cardLikeButton.classList.toggle('card__like-active'));
     cardDelButton.addEventListener('click', (event) => event.target.closest('.card').remove());
-    // imageCard.addEventListener('click', () => togglePopup(modalWindowThree));
+    imageCard.addEventListener('click', openAddImgCard);
 
     titleCard.textContent = item.name;
     imageCard.src = item.link;
 
-    imageCard.addEventListener('click', openAddMaskGroup);
-    function openAddMaskGroup() {
-        modalWindowThree.classList.toggle('popup_is_opened');
+
+    function openAddImgCard() {
+        modalWindowThree.classList.add('popup_is_opened');
         titlePopup.textContent = titleCard.textContent;
         imagePopup.src = imageCard.src;
     }
@@ -123,7 +118,7 @@ function handleAddCard(event) {
     const inputValueArea = document.querySelector('.form__text_type_area').value;
     const inputValueUrl = document.querySelector('.form__text_type_img').value;
     const elemenCard = getCard({ name: inputValueArea, link: inputValueUrl });
-    listElements.prepend(elemenCard); 
+    listElements.prepend(elemenCard);
     togglePopup(modalWindowTwo);
 }
 
