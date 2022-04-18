@@ -43,10 +43,10 @@ const imagePopup = modalWindowThree.querySelector('.popup__img');
 const listElements = document.querySelector('.elements__list');
 const cardTemplateAdd = document.querySelector('.card-template');
 
-const formTypeCard = document.querySelector('.forum_type_card');
+const formTypeCard = document.querySelector('.forum_card');
 const ImputImgAdd = formTypeCard.querySelector('.form__text_type_img');
 
-const formTypeEdit = document.querySelector('.forum_type_edit');
+const formTypeEdit = document.querySelector('.forum_edit');
 const nameInput = formTypeEdit.querySelector('.form__text_type_name');
 const jobInput = formTypeEdit.querySelector('.form__text_type_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
