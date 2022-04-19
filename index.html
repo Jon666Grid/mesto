@@ -42,17 +42,10 @@
          <div class="popup__container">
             <form class="form form_edit" name="myForm">
                <h3 class="form__profile">Редактировать профиль</h3>
-               <input type="text" 
-               name="UserName"
-               minlength="2"
-               maxlength="40"
-               placeholder="Имя" 
-               class="form__text form__text_type_name">
-               <input type="text" 
-               name="UserProfession" 
-               maxlength="60" 
-               placeholder="Профессия"
-               class="form__text form__text_type_profession">
+               <input type="text" name="UserName" minlength="2" maxlength="40" placeholder="Имя"
+                  class="form__text form__text_type_name">
+               <input type="text" name="UserProfession" maxlength="60" placeholder="Профессия"
+                  class="form__text form__text_type_profession">
                <button type="submit" class="form__submit-btn">
                   Сохранить
                </button>
@@ -60,13 +53,14 @@
             <button class="popup__close popup__close_edit" type="button"></button>
          </div>
       </div>
-      
-      
+
+
       <div class="popup popup_type_new-card">
          <div class="popup__container">
             <form class="form form_card" name="myForm">
                <h3 class="form__profile">Новое место</h3>
-               <input type="text" maxlength="40" placeholder="Название" name="name" class="form__text form__text_type_area">
+               <input type="text" maxlength="40" placeholder="Название" name="name"
+                  class="form__text form__text_type_area">
                <input type="url" placeholder="Ссылка на картинку" name="link" class="form__text form__text_type_img">
                <button type="submit" class="form__submit-btn">
                   Создать
@@ -75,18 +69,18 @@
             <button class="popup__close popup__close_card" type="button"></button>
          </div>
       </div>
-      
+
       <div class="popup popup_type_image">
          <div class="popup__container-img">
-            <img src="-" alt="" class="popup__img">
+            <img src="" alt="" class="popup__img">
             <h3 class="popup__title"></h3>
             <button class="popup__close popup__close_img" type="button"></button>
          </div>
       </div>
-      
+
       <template class="card-template">
          <li class="card">
-            <img src="-" alt="" class="card__img">
+            <img src="" alt="" class="card__img">
             <div class="card__flex">
                <h2 class="card__title"></h2>
                <button class="card__like-button" type="button"></button>
@@ -94,10 +88,11 @@
             </div>
          </li>
       </template>
-      
-      </div>
-      <script src="./scripts/index.js"></script>
-      
-      </body>
-      
-      </html>
+
+   </div>
+   <script src="./scripts/constants.js"></script>
+   <script src="./scripts/index.js"></script>
+
+</body>
+
+</html>
