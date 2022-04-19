@@ -60,6 +60,7 @@ function getCard(item) {
 
     titleCard.textContent = item.name;
     imageCard.src = item.link;
+    imageCard.alt = item.name;
 
     cardLikeButton.addEventListener('click', handleLikeCard);
     cardDelButton.addEventListener('click', handleDelCard);
@@ -72,7 +73,6 @@ function handleOpenCard(item) {
     openPopup(modalWindowImg);
     titlePopup.textContent = item.name;
     imagePopup.src = item.link;
-    imagePopup.alt = item.name;
 }
 
 function handleLikeCard(event) {
