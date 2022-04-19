@@ -72,6 +72,7 @@ function handleOpenCard(item) {
     openPopup(modalWindowImg);
     titlePopup.textContent = item.name;
     imagePopup.src = item.link;
+    imagePopup.alt = item.name;
 }
 
 function handleLikeCard(event) {
