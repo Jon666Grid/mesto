@@ -34,8 +34,8 @@ function closePopup(popup) {
 
 function onOverlayClick(event) {
     if (event.target === event.currentTarget) {
-        closePopup(modalWindowEdit);
-        closePopup(modalWindowCard);
+        const element = document.querySelector('.popup_is_opened');
+        closePopup(element);
     }
 }
 
@@ -52,11 +52,11 @@ function render() {
 }
 
 function getCard(item) {
-    const getTemplateList = cardTemplateAdd.content.cloneNode(true);
-    const titleCard = getTemplateList.querySelector('.card__title');
-    const imageCard = getTemplateList.querySelector('.card__img');
-    const cardDelButton = getTemplateList.querySelector('.card__del-button');
-    const cardLikeButton = getTemplateList.querySelector('.card__like-button');
+    const card = cardTemplateAdd.content.cloneNode(true);
+    const titleCard = card.querySelector('.card__title');
+    const imageCard = card.querySelector('.card__img');
+    const cardDelButton = card.querySelector('.card__del-button');
+    const cardLikeButton = card.querySelector('.card__like-button');
 
     titleCard.textContent = item.name;
     imageCard.src = item.link;
@@ -66,13 +66,14 @@ function getCard(item) {
     cardDelButton.addEventListener('click', handleDelCard);
     imageCard.addEventListener('click', () => handleOpenCard(item));
 
-    return getTemplateList;
+    return card;
 }
 
 function handleOpenCard(item) {
-    openPopup(modalWindowImg);
     titlePopup.textContent = item.name;
     imagePopup.src = item.link;
+    imagePopup.alt = item.name;
+    openPopup(modalWindowImg);
 }
 
 function handleLikeCard(event) {
@@ -101,6 +102,7 @@ modalThreeCloseBtn.addEventListener('click', () => closePopup(modalWindowImg));
 
 modalWindowEdit.addEventListener('click', onOverlayClick);
 modalWindowCard.addEventListener('click', onOverlayClick);
+modalWindowImg.addEventListener('click', onOverlayClick);
 
 formTypeEdit.addEventListener('submit', formSubmitHandler);
 formTypeCard.addEventListener('submit', handleAddCard);
