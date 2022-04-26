@@ -1,13 +1,13 @@
 const profoleButtonActive = document.querySelector('.profile__button');
 const modalWindowEdit = document.querySelector('.popup_type_edit');
-const modalCloseBtn = modalWindowEdit.querySelector('.popup__close_edit');
+const modalCloseBtn = modalWindowEdit.querySelector('.popup__button_edit');
 
 const cardButtonActive = document.querySelector('.profile__add-button');
 const modalWindowCard = document.querySelector('.popup_type_new-card');
-const cardCloseBtn = modalWindowCard.querySelector('.popup__close_card');
+const cardCloseBtn = modalWindowCard.querySelector('.popup__button_card');
 
 const modalWindowImg = document.querySelector('.popup_type_image');
-const modalThreeCloseBtn = modalWindowImg.querySelector('.popup__close_img');
+const modalThreeCloseBtn = modalWindowImg.querySelector('.popup__button_img');
 const titlePopup = modalWindowImg.querySelector('.popup__title');
 const imagePopup = modalWindowImg.querySelector('.popup__img');
 
@@ -15,12 +15,12 @@ const listElements = document.querySelector('.elements__list');
 const cardTemplateAdd = document.querySelector('.card-template');
 
 const formTypeCard = document.querySelector('.form_card');
-const inputValueArea = formTypeCard.querySelector('.form__text_type_area');
-const inputValueUrl = formTypeCard.querySelector('.form__text_type_img');
+const inputValueArea = formTypeCard.querySelector('.popup__input_type_area');
+const inputValueUrl = formTypeCard.querySelector('.popup__input_type_img');
 
 const formTypeEdit = document.querySelector('.form_edit');
-const nameInput = formTypeEdit.querySelector('.form__text_type_name');
-const jobInput = formTypeEdit.querySelector('.form__text_type_profession');
+const nameInput = formTypeEdit.querySelector('.popup__input_type_name');
+const jobInput = formTypeEdit.querySelector('.popup__input_type_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoProfession = document.querySelector('.profile__info-profession');
 

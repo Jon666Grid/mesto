@@ -1,4 +1,4 @@
-.form__profile {
+.popup__profile {
    width: 100%;
    max-width: 330px;
    font-size: 24px;
@@ -8,7 +8,7 @@
 
 @media all and (min-width: 240px) and (max-width: 639px) {
 
-   .form__profile {
+   .popup__profile {
       max-width: 238px;
       font-size: 18px;
       margin-bottom: 38px;
