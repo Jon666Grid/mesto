@@ -39,54 +39,62 @@
       </footer>
 
       <div class="popup popup_type_edit">
-         <div class="popup__container">
             <form class="popup__form form_edit" name="myForm" novalidate>
                <h3 class="popup__profile">Редактировать профиль</h3>
-               <input 
+               <input
+               required
                type="text" 
-               name="UserName" 
+               name="name" 
                minlength="2" 
                maxlength="40" 
                placeholder="Имя"
+               id="input-name"
                class="popup__input popup__input_type_name">
-               <input 
+               <span class="popup__error" id="input-name-error"></span>
+               <input
+               required
                type="text" 
-               name="UserProfession" 
+               name="profession" 
                minlength="2" 
                maxlength="200" 
                placeholder="Профессия"
-               class="popup__input popup__input_type_profession">
+               id="input-profession"
+               class="popup__input  popup__input_type_profession">
+               <span class="popup__error" id="input-profession-error"></span>
                <button type="submit" class="popup__submit-btn">
                   Сохранить
                </button>
             </form>
             <button class="popup__button popup__button_edit" type="button"></button>
-         </div>
       </div>
 
 
       <div class="popup popup_type_new-card">
-         <div class="popup__container">
             <form class="popup__form form_card" name="myForm" novalidate>
                <h3 class="popup__profile">Новое место</h3>
-               <input 
+               <input
+               required
                type="text"
-               name="name"
+               name="area"
                minlength="2"
                maxlength="30" 
-               placeholder="Название" 
+               placeholder="Название"
+               id="input-area" 
                class="popup__input popup__input_type_area">
-               <input 
+               <span class="popup__error" id="input-area-error"></span>
+               <input
+               required
                type="url"
                name="link" 
                placeholder="Ссылка на картинку" 
+               id="input-link"
                class="popup__input popup__input_type_img">
+               <span class="popup__error" id="input-link-error"></span>
                <button type="submit" class="popup__submit-btn">
                   Создать
                </button>
             </form>
             <button class="popup__button popup__button_card" type="button"></button>
-         </div>
       </div>
 
       <div class="popup popup_type_image">
