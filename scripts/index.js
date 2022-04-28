@@ -14,11 +14,11 @@ const imagePopup = modalWindowImg.querySelector('.popup__img');
 const listElements = document.querySelector('.elements__list');
 const cardTemplateAdd = document.querySelector('.card-template');
 
-const formTypeCard = document.querySelector('.form_card');
+const formTypeCard = document.querySelector('.form-card');
 const inputValueArea = formTypeCard.querySelector('.popup__input_type_area');
 const inputValueUrl = formTypeCard.querySelector('.popup__input_type_img');
 
-const formTypeEdit = document.querySelector('.form_edit');
+const formTypeEdit = document.querySelector('.form-edit');
 const nameInput = formTypeEdit.querySelector('.popup__input_type_name');
 const jobInput = formTypeEdit.querySelector('.popup__input_type_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
