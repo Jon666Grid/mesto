@@ -2,7 +2,6 @@
    max-width: 358px;
    height: 48px;
    width: 100%;
-   margin-top: 25px;
    font-style: normal;
    font-weight: 400;
    font-size: 18px;
@@ -12,6 +11,7 @@
    border-radius: 2px;
    background: #000000;
    color: #FFFFFF;
+   margin-top: 4px;
 }
 
 .popup__submit-btn:hover {
