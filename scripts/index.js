@@ -1,8 +1,8 @@
-const profoleButtonActive = document.querySelector('.profile__button');
+const profoleButton = document.querySelector('.profile__button');
 const modalWindowEdit = document.querySelector('.popup_type_edit');
 const modalCloseBtn = modalWindowEdit.querySelector('.popup__button_edit');
 
-const cardButtonActive = document.querySelector('.profile__add-button');
+const cardButton = document.querySelector('.profile__add-button');
 const modalWindowCard = document.querySelector('.popup_type_new-card');
 const cardCloseBtn = modalWindowCard.querySelector('.popup__button_card');
 
@@ -94,9 +94,9 @@ function handleAddCard(event) {
 
 render();
 
-profoleButtonActive.addEventListener('click', () => openPopup(modalWindowEdit));
+profoleButton.addEventListener('click', () => openPopup(modalWindowEdit));
 modalCloseBtn.addEventListener('click', () => closePopup(modalWindowEdit));
-cardButtonActive.addEventListener('click', () => openPopup(modalWindowCard));
+cardButton.addEventListener('click', () => openPopup(modalWindowCard));
 cardCloseBtn.addEventListener('click', () => closePopup(modalWindowCard));
 modalThreeCloseBtn.addEventListener('click', () => closePopup(modalWindowImg));
 
