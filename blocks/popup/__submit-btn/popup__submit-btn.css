@@ -12,10 +12,10 @@
    background: #000000;
    color: #FFFFFF;
    margin-top: 4px;
+   cursor: pointer;
 }
 
 .popup__submit-btn:hover {
-   cursor: pointer;
    opacity: 0.8;
 }
 

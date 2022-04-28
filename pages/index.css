@@ -33,30 +33,6 @@
 @import url(../blocks/popup/__label/popup__label.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__submit-btn/popup__submit-btn.css);
-
-
-
-.popup__error {
-   font-weight: 400;
-   font-size: 12px;
-   line-height: 1.2em;
-   color: rgba(255, 0, 0, 1);
-   padding: 0;
-   margin: 0;
-   /* opacity: 0;
-   transition: 0.3s; */
-}
-
-/* .popup__input-error_visible {
-   opacity: 1;
-} */
-
-.popup__input_type_error {
-   border-bottom: 1px solid rgba(255, 0, 0, 1);
-}
-
-.popup__submit-btn_disabled {
-   background-color:	#fff;
-   color: rgba(0, 0, 0, .2);
-   border: 1px solid rgba(0, 0, 0, .2);
-}
+@import url(../blocks/popup/__error/popup__error.css);
+@import url(../blocks/popup/__input/_type_error/popup__input_type_error.css);
+@import url(../blocks/popup/__submit-btn/_disabled/popup__submit-btn_disabled.css);

@@ -33,7 +33,7 @@ function closePopup(popup) {
 }
 
 function onOverlayClick(event) {
-    if (event.target === event.currentTarget) {
+    if (event.target === event.currentTarget || event.key === 'Escape') {
         const element = document.querySelector('.popup_is_opened');
         closePopup(element);
     }
@@ -106,3 +106,4 @@ modalWindowImg.addEventListener('click', onOverlayClick);
 
 formTypeEdit.addEventListener('submit', formSubmitHandler);
 formTypeCard.addEventListener('submit', handleAddCard);
+document.addEventListener('keydown', onOverlayClick);
