@@ -24,34 +24,50 @@ const jobInput = formTypeEdit.querySelector('.popup__input_type_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoProfession = document.querySelector('.profile__info-profession');
 
+
 function openPopup(popup) {
+    profileOpenHadler();
+    document.addEventListener('keydown', doSomething);
     popup.classList.add('popup_is_opened');
 }
 
 function closePopup(popup) {
+    document.removeEventListener('keydown', doSomething);
     popup.classList.remove('popup_is_opened');
 }
 
-function onOverlayClick(event) {
-    if (event.target === event.currentTarget || event.key === 'Escape') {
+function doSomething(event) {
+    if (event.key === 'Escape') {
         const element = document.querySelector('.popup_is_opened');
         closePopup(element);
     }
 }
 
-function formSubmitHandler(event) {
+function onOverlayClick(event) {
+    if (event.target === event.currentTarget) {
+        const element = document.querySelector('.popup_is_opened');
+        closePopup(element);
+    }
+}
+
+function profileOpenHadler() {
+    nameInput.value = profileInfoName.textContent;
+    jobInput.value = profileInfoProfession.textContent;
+}
+
+function profileSubmitHandler(event) {
     event.preventDefault();
-    profileInfoName.textContent = nameInput.value || profileInfoName.textContent;
-    profileInfoProfession.textContent = jobInput.value || profileInfoProfession.textContent;
+    profileInfoName.textContent = nameInput.value;
+    profileInfoProfession.textContent = jobInput.value;
     closePopup(modalWindowEdit);
 }
 
-function render() {
-    const html = initialCards.map(getCard);
+function renderCard() {
+    const html = initialCards.map(cardData);
     listElements.append(...html);
 }
 
-function getCard(item) {
+function cardData(item) {
     const card = cardTemplateAdd.content.cloneNode(true);
     const titleCard = card.querySelector('.card__title');
     const imageCard = card.querySelector('.card__img');
@@ -69,10 +85,10 @@ function getCard(item) {
     return card;
 }
 
-function handleOpenCard(item) {
-    titlePopup.textContent = item.name;
-    imagePopup.src = item.link;
-    imagePopup.alt = item.name;
+function handleOpenCard(card) {
+    titlePopup.textContent = card.name;
+    imagePopup.src = card.link;
+    imagePopup.alt = card.name;
     openPopup(modalWindowImg);
 }
 
@@ -86,13 +102,13 @@ function handleDelCard(event) {
 
 function handleAddCard(event) {
     event.preventDefault();
-    const elemenCard = getCard({ name: inputValueArea.value, link: inputValueUrl.value });
+    const elemenCard = cardData({ name: inputValueArea.value, link: inputValueUrl.value });
     closePopup(modalWindowCard);
     listElements.prepend(elemenCard);
     formTypeCard.reset()
 }
 
-render();
+renderCard();
 
 profoleButton.addEventListener('click', () => openPopup(modalWindowEdit));
 modalCloseBtn.addEventListener('click', () => closePopup(modalWindowEdit));
@@ -104,6 +120,5 @@ modalWindowEdit.addEventListener('click', onOverlayClick);
 modalWindowCard.addEventListener('click', onOverlayClick);
 modalWindowImg.addEventListener('click', onOverlayClick);
 
-formTypeEdit.addEventListener('submit', formSubmitHandler);
+formTypeEdit.addEventListener('submit', profileSubmitHandler);
 formTypeCard.addEventListener('submit', handleAddCard);
-document.addEventListener('keydown', onOverlayClick);
