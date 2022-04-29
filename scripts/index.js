@@ -1,4 +1,4 @@
-const profoleButton = document.querySelector('.profile__button');
+const profileButton = document.querySelector('.profile__button');
 const modalWindowEdit = document.querySelector('.popup_type_edit');
 const modalCloseBtn = modalWindowEdit.querySelector('.popup__button_edit');
 
@@ -26,7 +26,6 @@ const profileInfoProfession = document.querySelector('.profile__info-profession'
 
 
 function openPopup(popup) {
-    profileOpenHadler();
     document.addEventListener('keydown', doSomething);
     popup.classList.add('popup_is_opened');
 }
@@ -53,6 +52,7 @@ function onOverlayClick(event) {
 function profileOpenHadler() {
     nameInput.value = profileInfoName.textContent;
     jobInput.value = profileInfoProfession.textContent;
+    openPopup(modalWindowEdit);
 }
 
 function profileSubmitHandler(event) {
@@ -67,20 +67,20 @@ function renderCard() {
     listElements.append(...html);
 }
 
-function cardData(item) {
+function cardData(data) {
     const card = cardTemplateAdd.content.cloneNode(true);
     const titleCard = card.querySelector('.card__title');
     const imageCard = card.querySelector('.card__img');
     const cardDelButton = card.querySelector('.card__del-button');
     const cardLikeButton = card.querySelector('.card__like-button');
 
-    titleCard.textContent = item.name;
-    imageCard.src = item.link;
-    imageCard.alt = item.name;
+    titleCard.textContent = data.name;
+    imageCard.src = data.link;
+    imageCard.alt = data.name;
 
     cardLikeButton.addEventListener('click', handleLikeCard);
     cardDelButton.addEventListener('click', handleDelCard);
-    imageCard.addEventListener('click', () => handleOpenCard(item));
+    imageCard.addEventListener('click', () => handleOpenCard(data));
 
     return card;
 }
@@ -110,7 +110,7 @@ function handleAddCard(event) {
 
 renderCard();
 
-profoleButton.addEventListener('click', () => openPopup(modalWindowEdit));
+profileButton.addEventListener('click', profileOpenHadler);
 modalCloseBtn.addEventListener('click', () => closePopup(modalWindowEdit));
 cardButton.addEventListener('click', () => openPopup(modalWindowCard));
 cardCloseBtn.addEventListener('click', () => closePopup(modalWindowCard));
