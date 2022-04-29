@@ -7,7 +7,6 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     background: #FFFFFF;
     border-radius: 10px;
-    bottom: 135px;
 }
 
 @media all and (min-width: 240px) and (max-width: 639px) {
