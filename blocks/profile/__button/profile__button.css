@@ -1,4 +1,6 @@
 .profile__button {
+   height: 100%;
+   width: 100%;
    width: 24px;
    height: 24px;
    background-image: url("../../../images/slash.svg");
