@@ -1,11 +1,11 @@
 .profile__button {
-   width: 24px;
    height: 24px;
+   width: 24px;
    background-image: url("../../../images/slash.svg");
    background-color: transparent;
    background-position: center;
    background-repeat: no-repeat;
-   box-sizing: border-box;
+   background-size: 50%;
    border: 1px solid #FFFFFF;
    position: absolute;
    top: 36px;
