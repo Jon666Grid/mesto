@@ -6,13 +6,14 @@
    background-position: center;
    background-repeat: no-repeat;
    border: 1px solid #FFFFFF;
+   padding: 0;
    position: absolute;
    top: 36px;
    right: 0;
    transition: 0.3s;
 }
 
-.profile__button:hover {
+lf .profile__button:hover {
    cursor: pointer;
    opacity: 0.8;
 }
