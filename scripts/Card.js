@@ -20,14 +20,8 @@ export default class Card {
 
       return cardElement;
    }
-   // _resetPopup() {
-   //    this._titlePopup.textContent = '';
-   //    this._imagePopup.src = '';
-   //    this._imagePopup.alt = '';
-   // }
-
+   
    _handleOpenCard({ name, link }) {
-      // this._resetPopup();
       this._titlePopup.textContent = name;
       this._imagePopup.src = link;
       this._imagePopup.alt = name;
