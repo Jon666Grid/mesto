@@ -13,7 +13,6 @@ const cardCloseBtn = modalWindowCard.querySelector('.popup__button_card');
 const modalWindowImg = document.querySelector('.popup_type_image');
 const modalThreeCloseBtn = modalWindowImg.querySelector('.popup__button_img');
 const listElements = document.querySelector('.elements__list');
-const cardTemplateAdd = document.querySelector('.card-template');
 const formTypeCard = document.querySelector('.form-card');
 const inputValueArea = formTypeCard.querySelector('.popup__input_type_area');
 const inputValueUrl = formTypeCard.querySelector('.popup__input_type_img');
@@ -23,33 +22,19 @@ const jobInput = formTypeEdit.querySelector('.popup__input_type_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoProfession = document.querySelector('.profile__info-profession');
 
-
-function enableValidation(config) {
-    const form = Array.from(document.querySelectorAll(config.formSelector));
-    form.forEach((item) => {
-        item.addEventListener('submit', function (evt) {
-            evt.preventDefault();
-            toggleButton(config, item);
-        });
-        const inputs = Array.from(item.querySelectorAll(config.inputSelector));
-        inputs.forEach((inputList) => {
-            inputList.addEventListener('input', (event) => handleFormInput(event, config, item));
-        });
-        toggleButton(config, item);
-    });
-};
-enableValidation({
+const config = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
-});
+    submitButtonSelector: '.popup__submit-btn',
+    inactiveButtonClass: 'popup__submit-btn_disabled',
+    inputErrorClass: 'popup__input_type_error',
+};
 
+const ProfileValidator = new FormValidator(config, modalWindowEdit);
+ProfileValidator.enableValidation();
 
-// const validationEdit = new FormValidator(enableValidation, profileButton);
-// // const validationAdd = new FormValidator(enableValidation);
-
-// validationEdit.toggleButton();
-// // validationAdd.toggleButton();
-
+const CardValidator = new FormValidator(config, modalWindowCard);
+CardValidator.enableValidation();
 
 function onOverlayClick(event) {
     if (event.target === event.currentTarget) {
@@ -71,30 +56,20 @@ function profileSubmitHandler(event) {
     closePopup(modalWindowEdit);
 }
 
-function cardData(data) {
-    const card = cardTemplateAdd.content.cloneNode(true);
-    const titleCard = card.querySelector('.card__title');
-    const imageCard = card.querySelector('.card__img');
-
-    titleCard.textContent = data.name;
-    imageCard.src = data.link;
-    imageCard.alt = data.name;
-
-    return card;
+const cardData = (data) => {
+    const card = new Card(data, '.card-template');
+    return card.generateCard();
 }
 
-function handleAddCard(event) {
-    event.preventDefault();
-    const elemenCard = cardData({ name: inputValueArea.value, link: inputValueUrl.value });
+function handleAddCard(data) {
+    const card = cardData(data ?? { name: inputValueArea.value, link: inputValueUrl.value });
     closePopup(modalWindowCard);
-    listElements.prepend(elemenCard);
+    listElements.prepend(card);
     formTypeCard.reset()
 }
 
-initialCards.forEach((item) => {
-    const card = new Card(item, '.card-template');
-    const cardElement = card.generateCard();
-    document.querySelector('.elements__list').append(cardElement);
+initialCards.forEach((data) => {
+    handleAddCard(data);
 });
 
 profileButton.addEventListener('click', profileOpenHadler);
@@ -108,4 +83,4 @@ modalWindowCard.addEventListener('click', onOverlayClick);
 modalWindowImg.addEventListener('click', onOverlayClick);
 
 formTypeEdit.addEventListener('submit', profileSubmitHandler);
-formTypeCard.addEventListener('submit', handleAddCard);
+formTypeCard.addEventListener('submit', (e) => handleAddCard(e.preventDefault()));
