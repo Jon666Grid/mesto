@@ -1,13 +1,15 @@
 import { openPopup } from './utils.js';
+import { modalWindowImg, titlePopup, imagePopup } from './index.js';
 
 export default class Card {
-   _modalWindowImg = document.querySelector('.popup_type_image');
-   _titlePopup = this._modalWindowImg.querySelector('.popup__title');
-   _imagePopup = this._modalWindowImg.querySelector('.popup__img');
-
+   
    constructor(data, cardSelector) {
       this._data = data;
       this._cardSelector = cardSelector;
+
+      this._modalWindowImg = modalWindowImg;
+      this._titlePopup = titlePopup;
+      this._imagePopup = imagePopup;
    }
 
    _getTemplate() {
@@ -31,7 +33,8 @@ export default class Card {
    }
 
    _handleDelCard() {
-      this._element.closest('.card').remove();
+      this._element.remove();
+      this._element = null;
    }
 
    _setEventListeners() {

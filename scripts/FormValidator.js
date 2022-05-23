@@ -1,4 +1,4 @@
-export default class FormValidator {
+export class FormValidator {
 
    constructor(config, formElement) {
       this._config = config;
@@ -52,11 +52,16 @@ export default class FormValidator {
       });
    }
 
-   setInitialState() {
+   _setInitialState() {
       this._inputList.forEach((input) => {
          this._hideInputError(input);
-         this._toggleSubmitState();
       });
+   }
+
+   disableOpenSubmit() {
+      const buttonBtn = this._submit;
+      buttonBtn.disabled;
+      buttonBtn.classList.add(this._submitDisabled);
    }
 
    enableValidation() {
@@ -64,3 +69,5 @@ export default class FormValidator {
       this._toggleSubmitState();
    }
 }
+
+

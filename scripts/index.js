@@ -1,8 +1,7 @@
-
-import initialCards from './constants.js';
+import { initialCards, config } from './constants.js';
 import { openPopup, closePopup } from './utils.js';
 import Card from './Card.js';
-import FormValidator from './FormValidator.js';
+import { FormValidator } from './FormValidator.js';
 
 const profileButton = document.querySelector('.profile__button');
 const modalWindowEdit = document.querySelector('.popup_type_edit');
@@ -11,6 +10,8 @@ const cardButton = document.querySelector('.profile__add-button');
 const modalWindowCard = document.querySelector('.popup_type_new-card');
 const cardCloseBtn = modalWindowCard.querySelector('.popup__button_card');
 const modalWindowImg = document.querySelector('.popup_type_image');
+const titlePopup = modalWindowImg.querySelector('.popup__title');
+const imagePopup = modalWindowImg.querySelector('.popup__img');
 const modalThreeCloseBtn = modalWindowImg.querySelector('.popup__button_img');
 const listElements = document.querySelector('.elements__list');
 const formTypeCard = document.querySelector('.form-card');
@@ -22,19 +23,12 @@ const jobInput = formTypeEdit.querySelector('.popup__input_type_profession');
 const profileInfoName = document.querySelector('.profile__info-name');
 const profileInfoProfession = document.querySelector('.profile__info-profession');
 
-const config = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__submit-btn',
-    inactiveButtonClass: 'popup__submit-btn_disabled',
-    inputErrorClass: 'popup__input_type_error',
-};
-
 const ProfileValidator = new FormValidator(config, modalWindowEdit);
 ProfileValidator.enableValidation();
 
 const CardValidator = new FormValidator(config, modalWindowCard);
 CardValidator.enableValidation();
+
 
 function onOverlayClick(event) {
     if (event.target === event.currentTarget) {
@@ -47,6 +41,7 @@ function profileOpenHadler() {
     nameInput.value = profileInfoName.textContent;
     jobInput.value = profileInfoProfession.textContent;
     openPopup(modalWindowEdit);
+    ProfileValidator.disableOpenSubmit();
 }
 
 function profileSubmitHandler(event) {
@@ -56,25 +51,31 @@ function profileSubmitHandler(event) {
     closePopup(modalWindowEdit);
 }
 
-const cardData = (data) => {
+const dataCard = (data) => {
     const card = new Card(data, '.card-template');
     return card.generateCard();
 }
 
-function handleAddCard(data) {
-    const card = cardData(data ?? { name: inputValueArea.value, link: inputValueUrl.value });
-    closePopup(modalWindowCard);
+const handleAddCard = (event) => {
+    event.preventDefault();
+    const card = dataCard({ name: inputValueArea.value, link: inputValueUrl.value });
     listElements.prepend(card);
+    closePopup(modalWindowCard);
     formTypeCard.reset()
 }
 
-initialCards.forEach((data) => {
-    handleAddCard(data);
+const itemAddCards = (item) => {
+    const card = dataCard(item);
+    listElements.append(card);
+}
+
+initialCards.forEach((item) => {
+    itemAddCards(item);
 });
 
 profileButton.addEventListener('click', profileOpenHadler);
 modalCloseBtn.addEventListener('click', () => closePopup(modalWindowEdit));
-cardButton.addEventListener('click', () => openPopup(modalWindowCard));
+cardButton.addEventListener('click', () => openPopup(modalWindowCard, CardValidator.disableOpenSubmit()));
 cardCloseBtn.addEventListener('click', () => closePopup(modalWindowCard));
 modalThreeCloseBtn.addEventListener('click', () => closePopup(modalWindowImg));
 
@@ -83,4 +84,6 @@ modalWindowCard.addEventListener('click', onOverlayClick);
 modalWindowImg.addEventListener('click', onOverlayClick);
 
 formTypeEdit.addEventListener('submit', profileSubmitHandler);
-formTypeCard.addEventListener('submit', (e) => handleAddCard(e.preventDefault()));
+formTypeCard.addEventListener('submit', handleAddCard);
+
+export { modalWindowImg, titlePopup, imagePopup };
