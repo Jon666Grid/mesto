@@ -6,10 +6,6 @@ export default class Card {
    constructor(data, cardSelector) {
       this._data = data;
       this._cardSelector = cardSelector;
-
-      this._modalWindowImg = modalWindowImg;
-      this._titlePopup = titlePopup;
-      this._imagePopup = imagePopup;
    }
 
    _getTemplate() {
@@ -22,10 +18,10 @@ export default class Card {
    }
 
    _handleOpenCard({ name, link }) {
-      this._titlePopup.textContent = name;
-      this._imagePopup.src = link;
-      this._imagePopup.alt = name;
-      openPopup(this._modalWindowImg);
+      titlePopup.textContent = name;
+      imagePopup.src = link;
+      imagePopup.alt = name;
+      openPopup(modalWindowImg);
    }
 
    _handleLikeCard() {
