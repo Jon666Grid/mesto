@@ -1,11 +1,9 @@
-import { openPopup } from './utils.js';
-import { modalWindowImg, titlePopup, imagePopup } from './index.js';
-
 export default class Card {
-   
-   constructor(data, cardSelector) {
+
+   constructor(data, cardSelector, handleOpenCard) {
       this._data = data;
       this._cardSelector = cardSelector;
+      this._handleOpenCard = handleOpenCard;
    }
 
    _getTemplate() {
@@ -15,13 +13,6 @@ export default class Card {
          .querySelector('.card')
          .cloneNode(true);
       return cardElement;
-   }
-
-   _handleOpenCard({ name, link }) {
-      titlePopup.textContent = name;
-      imagePopup.src = link;
-      imagePopup.alt = name;
-      openPopup(modalWindowImg);
    }
 
    _handleLikeCard() {
@@ -44,11 +35,11 @@ export default class Card {
 
    generateCard() {
       this._element = this._getTemplate();
-      this._setEventListeners();
       const image = this._element.querySelector('.card__img');
       image.alt = this._data.name;
       image.src = this._data.link;
       this._element.querySelector('.card__title').textContent = this._data.name;
+      this._setEventListeners();
       return this._element;
    }
 }
