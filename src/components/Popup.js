@@ -16,19 +16,19 @@ export default class Popup {
    }
 
    _handleEscClose(evt) {
-      evt.key == 'Escape'
-         ? this.closePopup()
-         : false;
+      if (evt.key === 'Escape') {
+         this.closePopup()
+      }
    }
 
    _handleOverlayClose(evt) {
-      evt.target === evt.currentTarget
-         ? this.closePopup()
-         : false;
+      if (evt.target === evt.currentTarget) {
+         this.closePopup()
+      }
    }
 
    setEventListeners() {
-      this._popup.querySelector('.popup__button').addEventListener("mousedown", () => this.closePopup())
-      this._popup.addEventListener("mousedown", (evt) => this._handleOverlayClose(evt));
+      this._popup.querySelector('.popup__button').addEventListener("click", () => this.closePopup())
+      this._popup.addEventListener("click", (evt) => this._handleOverlayClose(evt));
    }
 }

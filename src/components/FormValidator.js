@@ -38,9 +38,8 @@ export class FormValidator {
    }
 
    _toggleSubmitState() {
-      const button = this._submit;
-      button.disabled = this._hasInvalidInput();
-      button.classList.toggle(this._submitDisabled, this._hasInvalidInput());
+      this._submit.disabled = this._hasInvalidInput();
+      this._submit.classList.toggle(this._submitDisabled, this._hasInvalidInput());
    }
 
    _setEventListeners() {
@@ -59,9 +58,8 @@ export class FormValidator {
    }
 
    disableOpenSubmit() {
-      const buttonBtn = this._submit;
-      buttonBtn.disabled;
-      buttonBtn.classList.add(this._submitDisabled);
+      this._submit.disabled;
+      this._submit.classList.add(this._submitDisabled);
    }
 
    enableValidation() {

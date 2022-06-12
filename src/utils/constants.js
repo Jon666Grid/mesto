@@ -37,13 +37,6 @@ const profileButton = document.querySelector('.profile__button');
 const modalWindowEdit = document.querySelector('.popup_type_edit');
 const cardButton = document.querySelector('.profile__add-button');
 const modalWindowCard = document.querySelector('.popup_type_new-card');
-const listElements = document.querySelector('.elements__list');
-const inputArea = document.querySelector('.popup__input_type_area');
-const inputUrl = document.querySelector('.popup__input_type_img');
-const nameInput = document.querySelector('.popup__input_type_name');
-const jobInput = document.querySelector('.popup__input_type_profession');
-const name = document.querySelector('.profile__info-name');
-const profession = document.querySelector('.profile__info-profession');
 
 export { 
    initialCards,
@@ -52,11 +45,4 @@ export {
    modalWindowEdit,
    cardButton,
    modalWindowCard, 
-   listElements,
-   inputArea,
-   inputUrl,
-   nameInput,
-   jobInput,
-   name,
-   profession
 };
