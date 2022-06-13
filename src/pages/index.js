@@ -48,26 +48,21 @@ popupWithImage.setEventListeners();
 const popupWithFormEdit = new PopupWithForm('.popup_type_edit', handleSubmitEdit);
 profileButton.addEventListener('click', () => {
     popupWithFormEdit.setInputValues(userInfo.getUserInfo());
-    popupWithFormEdit.openPopup()
-});
+    popupWithFormEdit.openPopup()});
 popupWithFormEdit.setEventListeners();
 
 const popupWithFormCard = new PopupWithForm('.popup_type_new-card', handleSubmitCard);
 cardButton.addEventListener('click', () => { popupWithFormCard.openPopup() });
 popupWithFormCard.setEventListeners();
 
-
-// не могу понять : вы пишите Обработчик должен принимать в параметр объект с данными из метода _getInputValues.,
-// но когда я делау так у меня при вводе теряеться часть контента, О себе : undefined и Название : undefined(сидел целый день ,
-//     не понимаю как исправить если делать по вашей рекомендации)
-function handleSubmitEdit(inputsValues) {
-    userInfo.setUserInfo(inputsValues);
+function handleSubmitEdit(data) {
+    userInfo.setUserInfo(data);
     popupWithFormEdit.close();
     profileValidator.disableOpenSubmit();
 }
 
-function handleSubmitCard(inputsValues) {
-    section.addItem(createCard(inputsValues));
+function handleSubmitCard(data) {
+    section.addItem(createCard(data));
     popupWithFormCard.close();
     cardValidator.disableOpenSubmit();
 }
