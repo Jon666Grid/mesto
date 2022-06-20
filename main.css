@@ -677,6 +677,11 @@ template {
     white-space: nowrap;
     overflow: hidden;
 }
+.card__like-container {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
 .card__like-button {
    height: 19px;
    min-width: 22px;
@@ -687,6 +692,7 @@ template {
    background-size: contain;
    border: none;
    transition: .3s;
+   margin-bottom: 3px;
 }
 
 .card__like-button:hover {
@@ -697,6 +703,11 @@ template {
 
 .card__like-active {
    background-image: url(35948469632d0421d697.svg);
+}
+.card__like-counter {
+   font-weight: 400;
+   font-size: 13px;
+   line-height: 1.2em;
 }
 .card__del-button {
     height: 19px;
