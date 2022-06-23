@@ -11,8 +11,8 @@ export default class PopupWithForm extends Popup {
 
    _getInputValues() {
       this._inputsValues = {};
-      this._inputs.forEach((data) => {
-         this._inputsValues[data.name] = data.value});
+      this._inputs.forEach((input) => {
+         this._inputsValues[input.name] = input.value});
       return this._inputsValues;
    }
 
@@ -31,5 +31,13 @@ export default class PopupWithForm extends Popup {
    close() {
       this._form.reset();
       super.closePopup();
+   }
+
+   loadingCard(status) {
+      if (status) {
+         this._button.textContent = 'Сохранение...'
+      } else {
+         this._button.textContent = 'Да';
+      }
    }
 }
