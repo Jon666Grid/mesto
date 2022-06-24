@@ -1,20 +1,11 @@
 .elements {
    min-height: 50vh;
-   max-width: 880px;
-   margin: 50px auto 0;
+   margin: 0 auto;
 }
 
 @media all and (min-width: 640px) and (max-width: 960px) {
 
    .elements {
       max-width: 600px;
-   }
-}
-
-@media all and (min-width: 240px) and (max-width: 639px) {
-
-
-   .elements {
-      margin-top: 38px;
    }
 }

@@ -5,11 +5,9 @@
    background-color: transparent;
    background-position: center;
    background-repeat: no-repeat;
+   box-sizing: border-box;
    border: 1px solid #FFFFFF;
    padding: 0;
-   position: absolute;
-   top: 36px;
-   right: 0;
    transition: 0.3s;
 }
 
@@ -23,8 +21,6 @@
    .profile__button {
       width: 22px;
       height: 22px;
-      top: 32px;
-      right: 10px;
    }
 }
 
@@ -33,7 +29,5 @@
    .profile__button {
       width: 18px;
       height: 18px;
-      top: 34px;
-      right: 20px;
    }
 }
